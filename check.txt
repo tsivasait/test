@@ -1,1 +1,46 @@
+step by step process on new vm or server 
 
+step 1 ( update server)
+
+sudo apt update 
+or 
+sudo yum update 
+
+step 2 ( install Dependency )
+
+--> Developer → GitHub → Jenkins → Build → Artifact Repository → Docker Image → Docker Container
+
+sudo yum install git 
+
+(now we are installed git and now check ) 
+
+sudo git --version 
+
+----------------------------------------------------
+
+now we install jenkins for that we need to install java Dependency 
+
+
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/rpm-stable/jenkins.repo
+sudo dnf upgrade
+# Add required dependencies for the Jenkins package
+sudo dnf install fontconfig java-21-openjdk
+sudo dnf install jenkins
+sudo systemctl daemon-reload
+sudo alternatives --set java /usr/lib/jvm/java-21-amazon-corretto/bin/java
+
+sudo systemctl enable jenkins
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+
+
+( now you can check staus of jenkins  Active: active (running) Loaded: loaded (/usr/lib/systemd/system/jenkins.service; enabled )
+
+---------------------------------------------------------------------
+
+
+
+
+
+                
