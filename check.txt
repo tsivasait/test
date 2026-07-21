@@ -38,6 +38,68 @@ sudo systemctl status jenkins
 ( now you can check staus of jenkins  Active: active (running) Loaded: loaded (/usr/lib/systemd/system/jenkins.service; enabled )
 
 ---------------------------------------------------------------------
+(Build Application tool maven for java)
+
+sudo yum install maven -y
+
+(Build Application tool for NodeJS for javascript)
+
+sudo yum install npm 
+
+-----------------------------------------------------------------------
+->Remove Old Docker Versions
+
+sudo yum remove docker \
+                docker-client \
+                docker-client-latest \
+                docker-common \
+                docker-latest \
+                docker-latest-logrotate \
+                docker-logrotate \
+                docker-engine
+
+->Set Up the Official Repository
+
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+
+->Install Docker Engine
+
+sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+or 
+sudo yum install docker
+
+->Manage Docker as a Non-Root User 
+
+sudo usermod -aG docker $USER
+newgrp docker
+
+
+->Start and Enable the Docker Service
+
+sudo systemctl enable --now docker
+sudo systemctl start docker 
+sudo systemctl status docker 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
