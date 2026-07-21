@@ -1,0 +1,32 @@
+                 Push Code
+                     │
+                     ▼
+                GitHub Repository
+                     │
+             (Webhook Trigger)
+                     │
+                     ▼
+                  Jenkins
+                     │
+      ┌──────────────┼──────────────┐
+      │              │              │
+      ▼              ▼              ▼
+   Checkout      Run Tests      Build App
+                     │
+                     ▼
+             Create JAR/WAR Artifact
+                     │
+                     ▼
+          Upload to Artifactory/Nexus
+                     │
+                     ▼
+            Build Docker Image
+                     │
+                     ▼
+        Push Image to Docker Registry
+                     │
+                     ▼
+       Deploy Docker Container
+                     │
+                     ▼
+          Application Running
